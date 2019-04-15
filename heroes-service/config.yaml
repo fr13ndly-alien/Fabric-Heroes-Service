@@ -56,6 +56,9 @@ client:
     systemCertPool: false
 
 # [Optional]. But most apps would have this section so that channel objects can be constructed based on the content below.
+
+#======================================= DEFINE NETWORK ==============================================#
+
 # If one of your application is creating channels, you might not use this
 channels:
   chainhero:
@@ -96,6 +99,8 @@ organizations:
       - peer1.org1.hf.chainhero.io
     certificateAuthorities:
       - ca.org1.hf.chainhero.io
+
+#====================================== CONFIGURATION NETWORK =======================================#
 
 # List of orderers to send transaction and channel create/update requests to.
 # The orderers consent on the order of transactions in a block to be committed to the ledger. For the time being only one orderer is needed.

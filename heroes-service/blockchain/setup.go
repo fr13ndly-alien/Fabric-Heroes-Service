@@ -26,23 +26,23 @@ type FabricSetup struct {
 	OrgAdmin        string
 	OrgName         string
 	UserName        string
-	client          chclient.ChannelClient
+	client          chclient.ChannelClient // interact with network API
 	admin           resmgmt.ResourceMgmtClient
 	sdk             *fabsdk.FabricSDK
 }
 
 // Initialize reads the configuration file and sets up the client, chain and event hub
 func (setup *FabricSetup) Initialize() error {
-
+	fmt.Println("\t[Blockchain/setup.go]: Inittialize ")
 	// Add parameters for the initialization
 	if setup.initialized {
-		return fmt.Errorf("sdk already initialized")
+		return fmt.Errorf("\t[Blockchain/setup.go]:sdk already initialized")
 	}
 
 	// Initialize the SDK with the configuration file
 	sdk, err := fabsdk.New(config.FromFile(setup.ConfigFile))
 	if err != nil {
-		return fmt.Errorf("failed to create sdk: %v", err)
+		return fmt.Errorf("\t[Blockchain/setup.go]:failed to create sdk: %v", err)
 	}
 	setup.sdk = sdk
 

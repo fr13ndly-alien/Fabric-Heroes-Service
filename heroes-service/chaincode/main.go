@@ -133,5 +133,7 @@ func main() {
 	err := shim.Start(new(HeroesServiceChaincode))
 	if err != nil {
 		fmt.Printf("Error starting Heroes Service chaincode: %s", err)
+	} else {
+		fmt.Println("============== CHAINCODE START SUCCESSFUL ===============")
 	}
 }

@@ -2,13 +2,14 @@ package blockchain
 
 import (
 	"fmt"
-	"github.com/hyperledger/fabric-sdk-go/api/apitxn/chclient"
 	"time"
+
+	"github.com/hyperledger/fabric-sdk-go/api/apitxn/chclient"
 )
 
 // InvokeHello
 func (setup *FabricSetup) InvokeHello(value string) (string, error) {
-
+	fmt.Println("[blockchain/invoke.go] Invoke Hello")
 	// Prepare arguments
 	var args []string
 	args = append(args, "invoke")
@@ -20,7 +21,7 @@ func (setup *FabricSetup) InvokeHello(value string) (string, error) {
 
 	// Add data that will be visible in the proposal, like a description of the invoke request
 	transientDataMap := make(map[string][]byte)
-	transientDataMap["result"] = []byte("Transient data in hello invoke")
+	transientDataMap["result"] = []byte("\t[Blockchain.invoke] Transient data in hello invoke")
 
 	// Register a notification handler on the client
 	notifier := make(chan *chclient.CCEvent)

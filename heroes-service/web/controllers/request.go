@@ -15,9 +15,10 @@ func (app *Application) RequestHandler(w http.ResponseWriter, r *http.Request) {
 		Success:       false,
 		Response:      false,
 	}
+
 	// Check form submitted
 	if r.FormValue("submitted") == "true" {
-		fmt.Println("\t[HuuHien] Handling request.html")
+		fmt.Printf("\t[HuuHien] Handling request.html\n")
 		helloValue := r.FormValue("hello")
 		pinValue := r.FormValue("pin")
 		fmt.Println("\t- [HuuHien] pin value: ", pinValue)

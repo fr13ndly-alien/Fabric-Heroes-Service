@@ -4,6 +4,7 @@ all: clean build env-up run
 
 dev: build run
 
+prepare: clean env-up
 ##### BUILD
 build:
 	@echo "Build ..."

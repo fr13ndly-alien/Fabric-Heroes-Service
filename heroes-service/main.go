@@ -40,10 +40,13 @@ func main() {
 	err = fSetup.InstallAndInstantiateCC()
 	if err != nil {
 		fmt.Printf("Unable to install and instantiate the chaincode: %v\n", err)
+	} else {
+		fmt.Printf("Success to install and instantiate the chaincode: %v\n")
 	}
 
 	// Launch the web application listening
 	fmt.Println("- Launch the web application listening")
+	// Set fabric SDK for Web app
 	app := &controllers.Application{
 		Fabric: &fSetup,
 	}
